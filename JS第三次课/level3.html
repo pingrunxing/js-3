@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #widget {
+            margin-left: 300px;
+        }
+        button{
+            margin-left: 15px;
+        }
+        #div-queue>div {
+            width: 40px;
+            background-color: red;
+
+            float: left;
+            margin: 0px 5px 0 0;
+
+            /* position: absolute; */
+        }
+
+        #div-queue::after {
+            width: 0;
+            height: 0;
+            content: '';
+            display: block;
+            clear: both;
+        }
+
+        #div-queue {
+            border: black 1px solid;
+            background-color: rgb(47, 172, 255);
+            height: 650px;
+            margin: 20px 300px 0px 300px;
+            display: flex;
+            align-items: flex-end;
+            /* position: relative; */
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <label id="widget">
+        <input type="text" id="input-data">
+        <button type="button" id="btn-left-push">左侧入</button>
+        <button type="button" id="btn-right-push">右侧入</button>
+        <button type="button" id="btn-left-pop">左侧出</button>
+        <button type="button" id="btn-right-pop">右侧出</button>
+        <button type="button" id="btn-sort">排序</button>
+        <button type="button" id="btn-random">随机20</button>
+        interval(ms)：<input type="text" id="input-interval" value="10" />
+    </label>
+    <div id="div-queue">
+
+    </div>
+
+
+    <script src="./l3.js"></script>
+
+
+</body>
+
+</html>

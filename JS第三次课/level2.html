@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul li {
+            list-style: none;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            var text = document.querySelector('textarea');
+            var btn = document.querySelector('button');
+            var ul = document.querySelector('ul');
+
+            btn.onclick = function() {
+                // 判断内容是否为空
+                if (text.value == '') {
+                    alert('不能输入空的留言内容');
+                } else {
+                    // 创建新留言
+                    var li = document.createElement('li');
+                    li.innerHTML = text.value;
+                    ul.insertBefore(li, ul.children[0]);
+                    text.value = '';
+                }
+            }
+        }
+     </script>
+</head>
+<body>
+    <textarea name="" id="" cols="80" rows="10"></textarea>
+    <button class="post">点击发布</button>
+    <ul class="list">
+    </ul>
+
+</body>
+</html>
